@@ -10,13 +10,15 @@
     <body> 
         <!-- Task2 -->
         <?php
-        $fromDateErr = $toDateErr = "";
+        $fromDateErr = $toDateErr = $datesErr = "";
         $fromDate = $toDate = "";
         if (!empty($_GET)) {
-            if (empty($_GET["fromDate"])) {
-                $fromDateErr = "This field is required.";}
-            if (empty($_GET["toDate"])) {
-                $toDateErr = "This field is required.";}}
+            if (empty($_GET["fromDate"])) 
+                $fromDateErr = "This field is required.";
+            if (empty($_GET["toDate"])) 
+                $toDateErr = "This field is required.";
+            if ($_GET["fromDate"] > $_GET["toDate"])
+                $datesErr = "'From date' must be earlier than 'To date'.";}     
         ?>
         <form class="formTest" action="index.php" method="get">
             <label>From date: </label>
@@ -49,10 +51,11 @@
                }
                ?>
             </select> <br>
+            <span class="error"><?php echo $datesErr;?></span> <br>
             <button type="submit" name="submit">Get info</button>
         </form>
         <?php         
-        if (!empty($_GET) && !empty($_GET["fromDate"]) && !empty($_GET["toDate"])){    
+        if (!empty($_GET) && !empty($_GET["fromDate"]) && !empty($_GET["toDate"]) && $datesErr == ""){    
             $fromDate = $_GET["fromDate"];
             $toDate = $_GET["toDate"];
             $country = $_GET["country"];
@@ -71,7 +74,9 @@
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr><td>" . $row['createdAt'] . "</td><td>" .$row['cntSuccess'] . "</td><td>" .$row['cntFailed']. "</td></tr>";
                 }
-              } 
+              }
+            else
+               echo "<tr><td colspan='4'>No Results</td></tr>"; 
             unset($_GET['fromDate'], $_GET['toDate'],$_GET['country'],$_GET['usr']); 
             }
            ?>

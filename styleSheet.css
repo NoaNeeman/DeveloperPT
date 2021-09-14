@@ -26,6 +26,7 @@ button {
     font-family: monospace;
     font-size: large;
     box-shadow: 2px 2px 3px black;
+    margin-top: 10px;
 }
 
 button:hover{
