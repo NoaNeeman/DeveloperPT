@@ -1,4 +1,4 @@
-<?php include 'includes/modelClass.php';?>
+<?php include 'models/modelClass.php';?>
 <style>
 <?php include 'styleSheet.css';?>
 </style>
