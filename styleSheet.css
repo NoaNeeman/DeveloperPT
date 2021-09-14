@@ -1,0 +1,58 @@
+label {
+    font-family: monospace;
+    font-size: large;
+    font-weight: bold;
+}
+
+input[type="date"] {
+    box-shadow: 1px 2px 7px #8a8a8a;
+    margin-bottom: 15px;
+    font-size: medium;
+}
+
+select {
+    box-shadow: 1px 2px 7px black;
+    border-top: 2px solid black;
+    border-left: 2px solid;
+    margin-bottom: 15px;
+    font-size: medium;
+}
+
+button {
+    background: #a5fd9f;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: large;
+    box-shadow: 2px 2px 3px black;
+}
+
+button:hover{
+    background: #68ff5d;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+table, th, td {
+    border: 1px solid black;
+    font-family: monospace;
+    font-size: large;
+}
+
+th, td {
+    padding: 5px;
+    text-align: center;
+  }
+
+th {
+    background: #ececec;
+    font-weight: bold;
+}
+
+span.error {
+    color: red;
+    font-weight: 800;
+    font-family: monospace;
+    font-style: italic;
+}
