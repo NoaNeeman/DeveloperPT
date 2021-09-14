@@ -16,6 +16,7 @@ select {
     border-left: 2px solid;
     margin-bottom: 15px;
     font-size: medium;
+    font-style: italic;
 }
 
 button {

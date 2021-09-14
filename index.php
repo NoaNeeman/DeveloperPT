@@ -29,7 +29,7 @@
             <span class="error">* <?php echo $toDateErr;?></span> <br>
             <label>Country: </label>
             <select name='country'>
-                <option value="-1">Choose country</option>
+                <option value="-1">choose country</option>
                 <?php 
                 $info = new ModelInfo();
                 $sql = "select cnt_id, cnt_title from countries"; 
@@ -41,7 +41,7 @@
             </select> <br>
             <label>User: </label>
             <select name='usr'>
-                <option value="-1">Choose user</option>
+                <option value="-1">choose user</option>
                <?php 
                $info = new ModelInfo();
                $sql = "select usr_id,usr_name from users"; 
@@ -52,7 +52,7 @@
                ?>
             </select> <br>
             <span class="error"><?php echo $datesErr;?></span> <br>
-            <button type="submit" name="submit">Get info</button>
+            <button type="submit" name="submit">Get log info</button>
         </form>
         <?php         
         if (!empty($_GET) && !empty($_GET["fromDate"]) && !empty($_GET["toDate"]) && $datesErr == ""){    
